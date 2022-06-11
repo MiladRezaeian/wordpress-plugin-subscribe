@@ -1,5 +1,7 @@
 <?php
+
 /** Plugin Name: Subscribe ... */
+
 defined('ABSPATH') || exit();
 
 final class Subscribe {
@@ -49,6 +51,11 @@ final class Subscribe {
 		register_activation_hook( __FILE__, array( $this, 'subscribe_activation') );
 		register_deactivation_hook( __FILE__, array( $this, 'subscribe_deactivation') );
 	}
+
+	public static function check_direct_access() {
+		defined('ABSPATH') || exit();
+	}
+
 }
 
 Subscribe::getInstance();
