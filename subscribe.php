@@ -22,9 +22,10 @@ final class Subscribe {
 	private function define_constants() {
 		define( 'SUBSCRIBE_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'SUBSCRIBE_URL', plugin_dir_url( __FILE__ ) );
-		define( 'SUBSCRIBE_CSS', SUBSCRIBE_URL . 'assets' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR );
-		define( 'SUBSCRIBE_JS', SUBSCRIBE_URL . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR );
-		define( 'SUBSCRIBE_INC', SUBSCRIBE_DIR . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR );
+		define( 'SUBSCRIBE_CSS', SUBSCRIBE_URL . 'assets/css/' );
+		define( 'SUBSCRIBE_JS', SUBSCRIBE_URL . 'assets/js/' );
+		define( 'SUBSCRIBE_COMPONENTS', SUBSCRIBE_URL . 'assets/components/' );
+		define( 'SUBSCRIBE_INC', SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR );
 		define( 'SUBSCRIBE_VIEWS', SUBSCRIBE_DIR . 'views' . DIRECTORY_SEPARATOR );
 	}
 
