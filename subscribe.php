@@ -32,8 +32,9 @@ final class Subscribe {
 	private function do_includes() {
 		if ( $this->is_request( 'admin' )){
 			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'class-admin.php';
-			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR . 'class-admin-abstract.php';
+			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'class-admin-abstract.php';
 			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR . 'class-admin-dashboard.php';
+			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR . 'class-admin-lists.php';
 		}
 	}
 

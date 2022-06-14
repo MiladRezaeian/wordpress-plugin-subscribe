@@ -1,6 +1,7 @@
 <?php
 
 abstract class AdminPageContract {
+
     protected $page_title;
 
     public function __construct() {
