@@ -2,7 +2,7 @@
 
 /** Plugin Name: Subscribe ... */
 
-defined( 'ABSPATH' ) || exit();
+Subscribe::check_direct_access();
 
 final class Subscribe {
 	protected static $_instance;
@@ -20,7 +20,7 @@ final class Subscribe {
 	}
 
 	private function define_constants() {
-		define( 'DS', DIRECTORY_SEPARATOR );
+		defined( 'DS' ) || define( 'DS', DIRECTORY_SEPARATOR );
 		define( 'SUBSCRIBE_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'SUBSCRIBE_URL', plugin_dir_url( __FILE__ ) );
 		define( 'SUBSCRIBE_CSS', SUBSCRIBE_URL . 'assets/css/' );
@@ -64,7 +64,7 @@ final class Subscribe {
 	}
 
 	public static function check_direct_access() {
-		defined( 'ABSPATH' ) || exit();
+		defined( 'ABSPATH' ) || exit('NO ACCESS!!!');
 	}
 
 }

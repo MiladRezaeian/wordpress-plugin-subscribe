@@ -1,5 +1,7 @@
 <?php
 
+Subscribe::check_direct_access();
+
 class AdminLists extends AdminPageContract{
 
 	public function __construct() {
