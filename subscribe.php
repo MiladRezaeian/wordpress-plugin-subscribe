@@ -2,7 +2,7 @@
 
 /** Plugin Name: Subscribe ... */
 
-defined('ABSPATH') || exit();
+defined( 'ABSPATH' ) || exit();
 
 final class Subscribe {
 	protected static $_instance;
@@ -20,23 +20,24 @@ final class Subscribe {
 	}
 
 	private function define_constants() {
+		define( 'DS', DIRECTORY_SEPARATOR );
 		define( 'SUBSCRIBE_DIR', plugin_dir_path( __FILE__ ) );
 		define( 'SUBSCRIBE_URL', plugin_dir_url( __FILE__ ) );
 		define( 'SUBSCRIBE_CSS', SUBSCRIBE_URL . 'assets/css/' );
 		define( 'SUBSCRIBE_JS', SUBSCRIBE_URL . 'assets/js/' );
 		define( 'SUBSCRIBE_COMPONENTS', SUBSCRIBE_URL . 'assets/components/' );
-		define( 'SUBSCRIBE_INC', SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR );
-		define( 'SUBSCRIBE_VIEWS', SUBSCRIBE_DIR . 'views' . DIRECTORY_SEPARATOR );
+		define( 'SUBSCRIBE_INC', SUBSCRIBE_DIR . 'inc' . DS );
+		define( 'SUBSCRIBE_VIEWS', SUBSCRIBE_DIR . 'views' . DS );
 	}
 
 	private function do_includes() {
-		if ( $this->is_request( 'admin' )){
-			include SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'class-admin.php';
+		if ( $this->is_request( 'admin' ) ) {
+			include SUBSCRIBE_DIR . 'inc' . DS . 'admin' . DS . 'class-admin.php';
 		}
 	}
 
 	public function is_request( $type ) {
-		switch ( $type ){
+		switch ( $type ) {
 			case 'admin':
 				return is_admin();
 				break;
@@ -49,21 +50,21 @@ final class Subscribe {
 		}
 	}
 
-	private function init(){
-		register_activation_hook( __FILE__, array( $this, 'subscribe_activation') );
-		register_deactivation_hook( __FILE__, array( $this, 'subscribe_deactivation') );
+	private function init() {
+		register_activation_hook( __FILE__, array( $this, 'subscribe_activation' ) );
+		register_deactivation_hook( __FILE__, array( $this, 'subscribe_deactivation' ) );
 	}
 
 	public function subscribe_activation() {
-		
+
 	}
 
 	public function subscribe_deactivation() {
-		
+
 	}
 
 	public static function check_direct_access() {
-		defined('ABSPATH') || exit();
+		defined( 'ABSPATH' ) || exit();
 	}
 
 }

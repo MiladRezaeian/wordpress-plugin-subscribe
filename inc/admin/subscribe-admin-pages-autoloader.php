@@ -17,7 +17,7 @@ class SubscribeAdminPagesAutoloader {
 		$class     = 'class-' . $class;
 		$file_name = $class . '.php';
 
-		return SUBSCRIBE_DIR . 'inc' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'pages' . DIRECTORY_SEPARATOR . $file_name;
+		return SUBSCRIBE_DIR . 'inc' . DS . 'admin' . DS . 'pages' . DS . $file_name;
 	}
 }
 
