@@ -1,5 +1,7 @@
 <?php
 
+Subscribe::check_direct_access();
+
 class Admin {
 
 	public function __construct() {
@@ -8,6 +10,11 @@ class Admin {
 		// add_action( 'admin_enqueue_scripts', array( $this, 'add_assets'));
 	}
 
+	/**
+	 * Add admin menu and submenu
+	 *
+	 * @return void
+	 */
 	public function init_admin_menu() {
 		$dashboard_page      = new AdminDashboard();
 		$lists_page          = new AdminLists();
@@ -39,6 +46,11 @@ class Admin {
 		} );
 	}
 
+	/**
+	 * Add assets to plugin admin pages
+	 *
+	 * @return void
+	 */
 	public function add_assets() {
 		wp_register_style( 'subscribe_main_style', SUBSCRIBE_CSS . 'subscribe-main.css' );
 		wp_register_script( 'subscribe_main_script', SUBSCRIBE_JS . 'subscribe-main.js', array( 'jquery' ) );
@@ -51,6 +63,11 @@ class Admin {
 		wp_enqueue_script( 'uikit_js' );
 	}
 
+	/**
+	 * Include Admin related files
+	 *
+	 * @return void
+	 */
 	private function do_includes() {
 		include SUBSCRIBE_DIR . 'inc' . DS . 'admin' . DS . 'class-admin-abstract.php';
 		include SUBSCRIBE_DIR . 'inc' . DS . 'admin' . DS . 'subscribe-admin-pages-autoloader.php';

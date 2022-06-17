@@ -1,5 +1,7 @@
 <?php
 
+Subscribe::check_direct_access();
+
 class SubscribeAdminPagesAutoloader {
 	public function __construct() {
 		spl_autoload_register( array( $this, 'autoload' ) );

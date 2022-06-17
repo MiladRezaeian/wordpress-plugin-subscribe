@@ -19,6 +19,11 @@ final class Subscribe {
 		$this->init();
 	}
 
+	/**
+	 * Define All Constants
+	 *
+	 * @return void
+	 */
 	private function define_constants() {
 		defined( 'DS' ) || define( 'DS', DIRECTORY_SEPARATOR );
 		define( 'SUBSCRIBE_DIR', plugin_dir_path( __FILE__ ) );
@@ -30,12 +35,24 @@ final class Subscribe {
 		define( 'SUBSCRIBE_VIEWS', SUBSCRIBE_DIR . 'views' . DS );
 	}
 
+	/**
+	 * Check request and then include files
+	 *
+	 * @return void
+	 */
 	private function do_includes() {
 		if ( $this->is_request( 'admin' ) ) {
 			include SUBSCRIBE_DIR . 'inc' . DS . 'admin' . DS . 'class-admin.php';
 		}
 	}
 
+	/**
+	 * Check request type
+	 *
+	 * @param $type
+	 *
+	 * @return bool|void
+	 */
 	public function is_request( $type ) {
 		switch ( $type ) {
 			case 'admin':
@@ -55,14 +72,29 @@ final class Subscribe {
 		register_deactivation_hook( __FILE__, array( $this, 'subscribe_deactivation' ) );
 	}
 
+	/**
+	 * Run once when plugin active
+	 *
+	 * @return void
+	 */
 	public function subscribe_activation() {
 
 	}
 
+	/**
+	 * Run once when plugin deactivate
+	 *
+	 * @return void
+	 */
 	public function subscribe_deactivation() {
 
 	}
 
+	/**
+	 * Check direct access in all files
+	 *
+	 * @return void
+	 */
 	public static function check_direct_access() {
 		defined( 'ABSPATH' ) || exit('NO ACCESS!!!');
 	}
